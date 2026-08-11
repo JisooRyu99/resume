@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="류지수 - AI Engineer | LLM · RAG · AI Agent"
+    >
+
+    <title>류지수 | AI Engineer</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<main class="resume">
+
+    <!-- ========================================
+         Header
+    ========================================= -->
+
+    <header class="hero">
+
+        <div class="hero-main">
+
+            <p class="eyebrow">
+                AI ENGINEER
+            </p>
+
+            <h1>
+                류지수
+            </h1>
+
+            <p class="role">
+                LLM · RAG · AI Agent · Backend
+            </p>
+
+        </div>
+
+        <nav class="links" aria-label="Contact">
+
+            <a
+                href="https://github.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                GitHub
+            </a>
+
+            <a
+                href="https://velog.io/@js03210"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Velog
+            </a>
+
+            <a href="cussion09@email.com">
+                Email
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ========================================
+         Profile
+    ========================================= -->
+
+    <section class="section profile" id="profile">
+
+        <div class="section-title">
+            <span>01</span>
+            <h2>Profile</h2>
+        </div>
+
+        <div class="section-content">
+
+            <p class="summary">
+                실서비스 환경에서 AI 시스템의
+                <strong>정확도, 성능, 보안 및 안정성 문제</strong>를
+                해결하는 AI Engineer입니다.
+            </p>
+
+            <p>
+                LangGraph 기반 AI Agent와 RAG 시스템을 설계하고,
+                LLM 기반 PII Detection, Guardrail,
+                Text2SQL 및 비동기 Backend Architecture를
+                개발해왔습니다.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         Experience
+    ========================================= -->
+
+    <section class="section experience-section" id="experience">
+
+        <div class="section-title">
+            <span>02</span>
+            <h2>Experience</h2>
+        </div>
+
+
+        <div class="section-content">
+
+
+            <!-- ========================================
+                 GoyoAI
+            ========================================= -->
+
+            <article class="experience">
+
+                <header class="experience-header">
+
+                    <div>
+                        <h3>GoyoAI</h3>
+
+                        <p class="position">
+                            AI Engineer
+                        </p>
+                    </div>
+
+                    <time datetime="2023-12">
+                        2023.12 — Present
+                    </time>
+
+                </header>
+
+
+                <!-- Project 1 -->
+
+                <article class="project">
+
+                    <header class="project-header">
+
+                        <div>
+                            <h4>
+                                LangGraph 기반 AI Agent &amp;
+                                PII Security
+                            </h4>
+
+                            <p class="project-category">
+                                AI Agent · RAG · PII Detection
+                            </p>
+                        </div>
+
+                    </header>
+
+
+                    <ul class="achievements">
+
+                        <li>
+                            <strong>
+                                사내 메일·일정·공지와 외부 웹 검색을
+                                하나의 질의에서 활용할 수 있도록
+                            </strong>
+                            LangGraph 기반 Agent Workflow를 설계하고,
+                            질문 유형에 따라 데이터 소스를 선택하는
+                            Hybrid RAG 구조를 구축했습니다.
+                        </li>
+
+                        <li>
+                            <strong>
+                                PII 탐지의 높은 오탐율과 추론 비용을
+                                개선하기 위해
+                            </strong>
+                            Qwen3 8B + Regex 기반 구조를
+                            RoBERTa 기반 경량 탐지 모델로 전환하고
+                            Teacher-Student Knowledge Distillation을
+                            적용했습니다.
+                            <strong class="result">
+                                PII 탐지 오탐율을 78~85% 감소시켰습니다.
+                            </strong>
+                        </li>
+
+                        <li>
+                            <strong>
+                                실서비스에서 발생하는 PII 탐지 오류를
+                                지속적으로 개선하기 위해
+                            </strong>
+                            실제 사용자 리포트를 학습 데이터에 반영하는
+                            반복 학습 구조를 적용했습니다.
+                            <strong class="result">
+                                생년월일 PII 탐지에서
+                                F1-Score 95.01%, Recall 99.01%를
+                                달성했습니다.
+                            </strong>
+                        </li>
+
+                    </ul>
+
+
+                    <div class="tech-stack" aria-label="Technologies">
+
+                        <span>LangGraph</span>
+                        <span>LangChain</span>
+                        <span>FastAPI</span>
+                        <span>PostgreSQL</span>
+                        <span>pgvector</span>
+                        <span>Qwen3</span>
+                        <span>RoBERTa</span>
+                        <span>scikit-learn</span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Project 2 -->
+
+                <article class="project">
+
+                    <header class="project-header">
+
+                        <div>
+                            <h4>
+                                자연어 기반 정형 데이터 질의 시스템
+                            </h4>
+
+                            <p class="project-category">
+                                Text2SQL · SQL Generation · Tool Calling
+                            </p>
+                        </div>
+
+                    </header>
+
+
+                    <ul class="achievements">
+
+                        <li>
+                            <strong>
+                                Vector Search 기반 문서 답변 방식의
+                                정형 데이터 조회 정확도 문제를 해결하기 위해
+                            </strong>
+                            자연어 질의에 Text2SQL을 적용하고,
+                            실제 데이터베이스에서 직접 조회하는
+                            구조로 전환했습니다.
+                        </li>
+
+                        <li>
+                            <strong>
+                                자연어 질의를 실제 데이터 조회로 연결하기 위해
+                            </strong>
+                            DB Schema 탐색, SQL 예시 검색,
+                            SQL 실행을 담당하는 3개의 Tool을 개발하고,
+                            파일 텍스트 추출부터 DB 적재,
+                            SQL 생성 및 실행까지의 전체 파이프라인을 구축했습니다.
+                        </li>
+
+                        <li>
+                            <strong>
+                                정형 데이터를 유사도 기반으로 검색하는
+                                방식의 일관성 문제를 개선하여
+                            </strong>
+                            자연어 질의를 SQL로 변환한 후
+                            PostgreSQL에서 직접 조회하는 구조를 구현했습니다.
+                            <strong class="result">
+                                정형 데이터에 대해 보다 일관되고 정확한
+                                조회가 가능한 구조를 확보했습니다.
+                            </strong>
+                        </li>
+
+                    </ul>
+
+
+                    <div class="tech-stack" aria-label="Technologies">
+
+                        <span>Text2SQL</span>
+                        <span>LLM</span>
+                        <span>PostgreSQL</span>
+                        <span>SQL</span>
+                        <span>Vector Search</span>
+                        <span>Tool Calling</span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Technical Excellence -->
+
+                <article class="project">
+
+                    <header class="project-header">
+
+                        <div>
+                            <h4>
+                                비동기 분산 Worker Architecture
+                            </h4>
+
+                            <p class="project-category">
+                                Backend · Async Processing · Distributed Worker
+                            </p>
+                        </div>
+
+                    </header>
+
+
+                    <ul class="achievements">
+
+                        <li>
+                            <strong>
+                                동시 요청 증가에 따른 서버 과부하와
+                                OOM 문제를 해결하기 위해
+                            </strong>
+                            기존 asyncio.Semaphore 기반 처리 구조를
+                            Celery + Redis 기반 비동기 분산 Worker
+                            Architecture로 전환했습니다.
+                        </li>
+
+                        <li>
+                            작업을 독립적인 Worker로 분리하여
+                            서버 부하를 분산하고,
+                            대량의 비동기 작업을 안정적으로 처리할 수 있는
+                            Backend 구조를 구축했습니다.
+                        </li>
+
+                    </ul>
+
+
+                    <div class="tech-stack" aria-label="Technologies">
+
+                        <span>Python</span>
+                        <span>Celery</span>
+                        <span>Redis</span>
+                        <span>AsyncIO</span>
+
+                    </div>
+
+                </article>
+
+            </article>
+
+
+            <!-- ========================================
+                 InterX
+            ========================================= -->
+
+            <article class="experience compact">
+
+                <header class="experience-header">
+
+                    <div>
+                        <h3>InterX</h3>
+
+                        <p class="position">
+                            Data Analysis Intern
+                        </p>
+                    </div>
+
+                    <time datetime="2021-07">
+                        2021.07 — 2021.12
+                    </time>
+
+                </header>
+
+
+                <ul class="achievements">
+
+                    <li>
+                        제조 현장의 자동차 부품 양품·불량품을
+                        자동 분류하기 위해
+                        OpenCV와 CNN 기반 이미지 분류 시스템의
+                        프로토타입을 개발했습니다.
+                    </li>
+
+                    <li>
+                        실제 제조 데이터에서 발생하는
+                        클래스 불균형 문제를 해결하기 위해
+                        Data Augmentation을 적용하고
+                        모델 학습 데이터를 보완했습니다.
+                    </li>
+
+                </ul>
+
+
+                <div class="tech-stack" aria-label="Technologies">
+
+                    <span>Python</span>
+                    <span>OpenCV</span>
+                    <span>CNN</span>
+                    <span>Data Augmentation</span>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         Skills
+    ========================================= -->
+
+    <section class="section skills-section" id="skills">
+
+        <div class="section-title">
+            <span>03</span>
+            <h2>Technical Skills</h2>
+        </div>
+
+
+        <div class="section-content skills">
+
+
+            <div class="skill-group">
+
+                <h3>
+                    AI / LLM
+                </h3>
+
+                <div class="skill-list">
+
+                    <span>LLM</span>
+                    <span>RAG</span>
+                    <span>Text2SQL</span>
+                    <span>LangChain</span>
+                    <span>LangGraph</span>
+                    <span>Qwen</span>
+                    <span>Gemma</span>
+                    <span>Tool Calling</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-group">
+
+                <h3>
+                    AI Reliability &amp; Security
+                </h3>
+
+                <div class="skill-list">
+
+                    <span>PII Detection</span>
+                    <span>LLM Guardrail</span>
+                    <span>Hallucination Mitigation</span>
+                    <span>Knowledge Distillation</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-group">
+
+                <h3>
+                    Backend
+                </h3>
+
+                <div class="skill-list">
+
+                    <span>Python</span>
+                    <span>FastAPI</span>
+                    <span>AsyncIO</span>
+                    <span>Celery</span>
+                    <span>Redis</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-group">
+
+                <h3>
+                    Data &amp; Infrastructure
+                </h3>
+
+                <div class="skill-list">
+
+                    <span>PostgreSQL</span>
+                    <span>pgvector</span>
+                    <span>ChromaDB</span>
+                    <span>Docker</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         Education
+    ========================================= -->
+
+    <section class="section education-section" id="education">
+
+        <div class="section-title">
+            <span>04</span>
+            <h2>Education</h2>
+        </div>
+
+
+        <div class="section-content">
+
+
+            <article class="education-item">
+
+                <div>
+
+                    <h3>
+                        울산대학교
+                    </h3>
+
+                    <p>
+                        IT융합 · 소프트웨어공학
+                    </p>
+
+                </div>
+
+                <time datetime="2018-03">
+                    2018.03 — 2023.02
+                </time>
+
+            </article>
+
+
+            <article class="education-item">
+
+                <div>
+
+                    <h3>
+                        Naver Boostcamp AI Tech 4기
+                    </h3>
+
+                    <p>
+                        추천 시스템 (Recsys)
+                    </p>
+
+                </div>
+
+                <time datetime="2022-09">
+                    2022.09 — 2023.02
+                </time>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         Certificates
+    ========================================= -->
+
+    <section class="section certificates-section" id="certificates">
+
+        <div class="section-title">
+            <span>05</span>
+            <h2>Certificates</h2>
+        </div>
+
+
+        <div class="section-content">
+
+            <div class="certificate">
+
+                <strong>
+                    ADsP
+                </strong>
+
+                <time datetime="2024-06">
+                    2024.06
+                </time>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         Footer
+    ========================================= -->
+
+    <footer class="footer">
+
+        <p>
+            류지수 · AI Engineer
+        </p>
+
+    </footer>
+
+</main>
+
+</body>
+</html>
