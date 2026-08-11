@@ -1,0 +1,1123 @@
+/* ========================================
+   Variables
+======================================== */
+
+:root {
+    --bg: #f7f7f5;
+    --surface: #ffffff;
+
+    --text: #171717;
+    --text-secondary: #666666;
+    --text-light: #999999;
+
+    --border: #e5e5e5;
+
+    --accent: #635bff;
+    --accent-light: #f0efff;
+
+    --max-width: 1100px;
+    --content-width: 820px;
+
+    --radius: 12px;
+}
+
+
+/* ========================================
+   Reset
+======================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Pretendard",
+        "Noto Sans KR",
+        "Segoe UI",
+        sans-serif;
+
+    line-height: 1.7;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+strong {
+    color: var(--text);
+    font-weight: 700;
+}
+
+
+/* ========================================
+   Layout
+======================================== */
+
+.resume {
+    width: min(
+        calc(100% - 48px),
+        var(--max-width)
+    );
+
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   Hero
+======================================== */
+
+.hero {
+    min-height: 62vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 90px 0 75px;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+
+    margin-bottom: 18px;
+
+    color: var(--accent);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+}
+
+.eyebrow::before {
+    content: "";
+
+    width: 24px;
+    height: 2px;
+
+    margin-right: 10px;
+
+    background: var(--accent);
+}
+
+.hero h1 {
+    margin-bottom: 8px;
+
+    font-size: clamp(52px, 8vw, 92px);
+    line-height: 1;
+
+    font-weight: 800;
+
+    letter-spacing: -0.06em;
+}
+
+.role {
+    color: var(--text-secondary);
+
+    font-size: clamp(20px, 3vw, 30px);
+    font-weight: 500;
+
+    letter-spacing: -0.03em;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 32px;
+}
+
+.links a {
+    padding: 8px 16px;
+
+    border: 1px solid var(--border);
+    border-radius: 999px;
+
+    background: var(--surface);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.links a:hover {
+    transform: translateY(-2px);
+
+    background: var(--text);
+    border-color: var(--text);
+
+    color: #ffffff;
+}
+
+
+/* ========================================
+   Section
+======================================== */
+
+.section {
+    display: grid;
+
+    grid-template-columns: 200px 1fr;
+
+    gap: 50px;
+
+    padding: 72px 0;
+
+    border-top: 1px solid var(--border);
+}
+
+.section-title {
+    position: sticky;
+    top: 40px;
+
+    align-self: start;
+}
+
+.section-title span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--accent);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 0.1em;
+}
+
+.section-title h2 {
+    font-size: 27px;
+    font-weight: 750;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.04em;
+}
+
+.section-content {
+    width: 100%;
+    max-width: var(--content-width);
+}
+
+
+/* ========================================
+   Profile
+======================================== */
+
+.profile .section-content {
+    padding-right: 20px;
+}
+
+.summary {
+    margin-bottom: 20px;
+
+    font-size: 24px;
+    font-weight: 600;
+
+    line-height: 1.5;
+
+    letter-spacing: -0.04em;
+}
+
+.section-content > p:not(.summary) {
+    margin-bottom: 14px;
+
+    color: var(--text-secondary);
+
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   Experience
+======================================== */
+
+.experience {
+    margin-bottom: 72px;
+}
+
+.experience:last-child {
+    margin-bottom: 0;
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 30px;
+
+    margin-bottom: 34px;
+}
+
+.experience-header h3 {
+    margin-bottom: 3px;
+
+    font-size: 25px;
+    font-weight: 750;
+
+    line-height: 1.3;
+
+    letter-spacing: -0.04em;
+}
+
+.experience-header .position {
+    color: var(--text-secondary);
+
+    font-size: 14px;
+}
+
+.experience-header time {
+    flex-shrink: 0;
+
+    padding-top: 4px;
+
+    color: var(--text-light);
+
+    font-size: 12px;
+    font-weight: 500;
+
+    white-space: nowrap;
+}
+
+
+/* ========================================
+   Project
+======================================== */
+
+.project {
+    position: relative;
+
+    margin-bottom: 46px;
+    padding-left: 25px;
+
+    border-left: 2px solid var(--border);
+}
+
+.project:last-child {
+    margin-bottom: 0;
+}
+
+.project::before {
+    content: "";
+
+    position: absolute;
+
+    top: 5px;
+    left: -5px;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+}
+
+.project-header {
+    margin-bottom: 18px;
+}
+
+.project-header h4 {
+    margin-bottom: 4px;
+
+    font-size: 19px;
+    font-weight: 700;
+
+    line-height: 1.45;
+
+    letter-spacing: -0.035em;
+}
+
+.project-category {
+    color: var(--text-light);
+
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: 0.01em;
+}
+
+
+/* ========================================
+   Achievements
+======================================== */
+
+.achievements {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+
+    margin-bottom: 20px;
+}
+
+.achievements li {
+    position: relative;
+
+    padding-left: 17px;
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+.achievements li::before {
+    content: "•";
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    color: var(--accent);
+
+    font-weight: 700;
+}
+
+.achievements .result {
+    color: var(--text);
+
+    font-weight: 700;
+}
+
+
+/* ========================================
+   Technical Excellence
+======================================== */
+
+/* .technical-excellence {
+    margin-top: 8px;
+    margin-bottom: 0;
+
+    padding: 22px 24px 22px 25px;
+
+    border: 0;
+    border-radius: var(--radius);
+
+    background: var(--text);
+    color: #ffffff;
+}
+
+.technical-excellence::before {
+    display: none;
+}
+
+.technical-excellence .project-header {
+    margin-bottom: 15px;
+}
+
+.technical-excellence .project-header h4 {
+    color: #ffffff;
+}
+
+.technical-excellence .project-category {
+    color: #999999;
+}
+
+.technical-excellence .achievements {
+    margin-bottom: 18px;
+}
+
+.technical-excellence .achievements li {
+    color: #cccccc;
+}
+
+.technical-excellence .achievements li::before {
+    color: #8d87ff;
+}
+
+.technical-excellence .achievements strong {
+    color: #ffffff;
+} */
+
+
+/* ========================================
+   Tech Stack
+======================================== */
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tech-stack span {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 4px 9px;
+
+    border-radius: 5px;
+
+    background: #f0f0ee;
+
+    color: #555555;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    line-height: 1.5;
+}
+
+.technical-excellence .tech-stack span {
+    background: #2b2b2b;
+    color: #cccccc;
+}
+
+
+/* ========================================
+   Previous Experience
+======================================== */
+
+.experience.compact {
+    margin-top: 55px;
+    margin-bottom: 0;
+
+    padding-top: 38px;
+
+    border-top: 1px solid var(--border);
+}
+
+.experience.compact .experience-header {
+    margin-bottom: 22px;
+}
+
+.experience.compact .achievements {
+    gap: 9px;
+}
+
+.experience.compact .achievements li {
+    font-size: 14px;
+}
+
+
+/* ========================================
+   Skills
+======================================== */
+
+.skills {
+    display: flex;
+    flex-direction: column;
+
+    gap: 30px;
+}
+
+.skill-group h3 {
+    margin-bottom: 11px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: -0.02em;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 7px;
+}
+
+.skill-list span {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 6px 11px;
+
+    border: 1px solid var(--border);
+    border-radius: 6px;
+
+    background: var(--surface);
+
+    color: #555555;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+
+.skill-list span:hover {
+    transform: translateY(-2px);
+
+    border-color: var(--accent);
+
+    color: var(--accent);
+}
+
+
+/* ========================================
+   Education
+======================================== */
+
+.education-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 30px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.education-item:first-child {
+    padding-top: 0;
+}
+
+.education-item h3 {
+    margin-bottom: 3px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    letter-spacing: -0.02em;
+}
+
+.education-item p {
+    color: var(--text-secondary);
+
+    font-size: 13px;
+}
+
+.education-item time {
+    flex-shrink: 0;
+
+    padding-top: 2px;
+
+    color: var(--text-light);
+
+    font-size: 12px;
+
+    white-space: nowrap;
+}
+
+
+/* ========================================
+   Certificates
+======================================== */
+
+.certificate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 17px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.certificate strong {
+    font-size: 15px;
+}
+
+.certificate time {
+    color: var(--text-light);
+
+    font-size: 12px;
+}
+
+
+/* ========================================
+   Footer
+======================================== */
+
+.footer {
+    padding: 45px 0 60px;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--text-light);
+
+    font-size: 12px;
+}
+
+
+/* ========================================
+   Print / PDF
+======================================== */
+
+@page {
+    size: A4;
+    margin: 14mm 15mm;
+}
+
+@media print {
+
+    :root {
+        --bg: #ffffff;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    body {
+        background: #ffffff;
+
+        color: #171717;
+
+        font-size: 10pt;
+    }
+
+    .resume {
+        width: 100%;
+        max-width: none;
+
+        margin: 0;
+    }
+
+    /* ----------------------------------------
+       Header
+    ---------------------------------------- */
+
+    .hero {
+        min-height: auto;
+
+        padding: 10mm 0 8mm;
+    }
+
+    .hero h1 {
+        font-size: 52pt;
+    }
+
+    .role {
+        font-size: 18pt;
+    }
+
+    .links {
+        margin-top: 18px;
+    }
+
+    .links a {
+        padding: 0;
+
+        border: 0;
+        border-radius: 0;
+
+        background: transparent;
+
+        color: var(--text-secondary);
+
+        font-size: 9pt;
+    }
+
+    .links a:hover {
+        transform: none;
+
+        background: transparent;
+
+        border: 0;
+
+        color: var(--text-secondary);
+    }
+
+    .links a:not(:last-child)::after {
+        content: " · ";
+
+        margin-left: 8px;
+
+        color: var(--text-light);
+    }
+
+    /* ----------------------------------------
+       Section
+    ---------------------------------------- */
+
+    .section {
+        grid-template-columns: 125px 1fr;
+
+        gap: 28px;
+
+        padding: 8mm 0;
+
+        border-top: 1px solid #dddddd;
+    }
+
+    .section-title {
+        position: static;
+    }
+
+    .section-title span {
+        font-size: 8pt;
+    }
+
+    .section-title h2 {
+        font-size: 15pt;
+    }
+
+    .section-content {
+        max-width: none;
+    }
+
+    /* ----------------------------------------
+       Profile
+    ---------------------------------------- */
+
+    .summary {
+        margin-bottom: 10px;
+
+        font-size: 14pt;
+        line-height: 1.45;
+    }
+
+    .section-content > p:not(.summary) {
+        margin-bottom: 6px;
+
+        font-size: 9.5pt;
+        line-height: 1.65;
+    }
+
+    /* ----------------------------------------
+       Experience
+    ---------------------------------------- */
+
+    .experience {
+        margin-bottom: 9mm;
+    }
+
+    .experience-header {
+        margin-bottom: 5mm;
+
+        gap: 20px;
+    }
+
+    .experience-header h3 {
+        font-size: 14pt;
+    }
+
+    .experience-header .position {
+        font-size: 9pt;
+    }
+
+    .experience-header time {
+        font-size: 8pt;
+    }
+
+    .project {
+        margin-bottom: 6mm;
+
+        padding-left: 14px;
+
+        border-left-width: 1px;
+    }
+
+    .project::before {
+        left: -4px;
+
+        width: 7px;
+        height: 7px;
+    }
+
+    .project-header {
+        margin-bottom: 3mm;
+    }
+
+    .project-header h4 {
+        font-size: 10.5pt;
+        line-height: 1.4;
+    }
+
+    .project-category {
+        font-size: 7.5pt;
+    }
+
+    .achievements {
+        gap: 5px;
+
+        margin-bottom: 3mm;
+    }
+
+    .achievements li {
+        padding-left: 12px;
+
+        font-size: 8.7pt;
+        line-height: 1.55;
+    }
+
+    .tech-stack {
+        gap: 4px;
+    }
+
+    .tech-stack span {
+        padding: 2px 6px;
+
+        font-size: 7pt;
+    }
+
+    /* ----------------------------------------
+       Technical Excellence
+    ---------------------------------------- */
+
+    .technical-excellence {
+        margin-top: 2mm;
+
+        padding: 4mm;
+
+        border-radius: 6px;
+
+        break-inside: avoid;
+    }
+
+    .technical-excellence .achievements li {
+        font-size: 8.5pt;
+    }
+
+    /* ----------------------------------------
+       Previous Experience
+    ---------------------------------------- */
+
+    .experience.compact {
+        margin-top: 5mm;
+
+        padding-top: 5mm;
+    }
+
+    .experience.compact .achievements li {
+        font-size: 8.7pt;
+    }
+
+    /* ----------------------------------------
+       Skills
+    ---------------------------------------- */
+
+    .skills {
+        gap: 5mm;
+    }
+
+    .skill-group h3 {
+        margin-bottom: 2mm;
+
+        font-size: 9pt;
+    }
+
+    .skill-list {
+        gap: 4px;
+    }
+
+    .skill-list span {
+        padding: 3px 7px;
+
+        border: 1px solid #dddddd;
+
+        font-size: 7.5pt;
+    }
+
+    /* ----------------------------------------
+       Education
+    ---------------------------------------- */
+
+    .education-item {
+        padding: 3mm 0;
+    }
+
+    .education-item h3 {
+        font-size: 9.5pt;
+    }
+
+    .education-item p {
+        font-size: 8pt;
+    }
+
+    .education-item time {
+        font-size: 7.5pt;
+    }
+
+    /* ----------------------------------------
+       Certificates
+    ---------------------------------------- */
+
+    .certificate {
+        padding: 3mm 0;
+    }
+
+    .certificate strong {
+        font-size: 9pt;
+    }
+
+    .certificate time {
+        font-size: 7.5pt;
+    }
+
+    /* ----------------------------------------
+       Footer
+    ---------------------------------------- */
+
+    .footer {
+        padding: 5mm 0;
+
+        font-size: 7.5pt;
+    }
+
+    /* ----------------------------------------
+       Page Break Control
+    ---------------------------------------- */
+
+    .experience,
+    .project,
+    .skill-group,
+    .education-item,
+    .certificate {
+        break-inside: avoid;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        break-after: avoid;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+
+/* ========================================
+   Responsive
+======================================== */
+
+@media (max-width: 800px) {
+
+    .resume {
+        width: min(
+            calc(100% - 36px),
+            var(--max-width)
+        );
+    }
+
+    .hero {
+        min-height: 60vh;
+
+        padding: 70px 0 60px;
+    }
+
+    .section {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+
+        padding: 60px 0;
+    }
+
+    .section-title {
+        position: static;
+    }
+
+    .section-title h2 {
+        font-size: 24px;
+    }
+
+    .summary {
+        font-size: 21px;
+    }
+
+    .experience-header {
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+    .experience-header time {
+        padding-top: 0;
+    }
+
+    .project {
+        padding-left: 20px;
+    }
+
+    .education-item {
+        flex-direction: column;
+
+        gap: 5px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .resume {
+        width: calc(100% - 28px);
+    }
+
+    .hero {
+        padding: 55px 0 50px;
+    }
+
+    .hero h1 {
+        font-size: 54px;
+    }
+
+    .role {
+        font-size: 19px;
+    }
+
+    .links {
+        gap: 7px;
+    }
+
+    .links a {
+        padding: 7px 12px;
+
+        font-size: 12px;
+    }
+
+    .section {
+        padding: 50px 0;
+    }
+
+    .section-content > p:not(.summary),
+    .achievements li {
+        font-size: 14px;
+    }
+
+    .project-header h4 {
+        font-size: 18px;
+    }
+
+    .technical-excellence {
+        padding: 20px;
+    }
+
+    .education-item {
+        flex-direction: column;
+
+        gap: 5px;
+    }
+}
