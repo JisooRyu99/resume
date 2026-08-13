@@ -125,7 +125,7 @@ strong {
 .hero h1 {
     margin-bottom: 8px;
 
-    font-size: clamp(52px, 8vw, 92px);
+    font-size: clamp(42px, 5vw, 64px);
     line-height: 1;
 
     font-weight: 800;
