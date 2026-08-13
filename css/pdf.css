@@ -1,0 +1,329 @@
+@page {
+    size: A4;
+    margin: 10mm 15mm;
+}
+
+:root {
+    --text: #171717;
+    --secondary: #666;
+    --light: #999;
+    --border: #e5e5e5;
+    --accent: #4f46c5;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: var(--text);
+    background: white;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Pretendard",
+        "Noto Sans KR",
+        "Segoe UI",
+        sans-serif;
+
+    font-size: 9.5pt;
+    line-height: 1.42;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+.resume-pdf {
+    width: 100%;
+    max-width: 180mm;
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   Header
+======================================== */
+
+.resume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    padding-bottom: 14px;
+
+    border-bottom: 2px solid var(--text);
+}
+
+.resume-header h1 {
+    margin: 0;
+
+    font-size: 28pt;
+    line-height: 1;
+
+    letter-spacing: -0.06em;
+}
+
+.role {
+    margin: 7px 0 0;
+
+    font-size: 14pt;
+    font-weight: 700;
+}
+
+.specialty {
+    margin: 4px 0 0;
+
+    color: var(--secondary);
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    gap: 1px;
+
+    font-size: 8pt;
+}
+
+.contact a {
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+
+/* ========================================
+   Section
+======================================== */
+
+section {
+    margin-top: 15px;
+
+    page-break-inside: avoid;
+}
+
+section h2 {
+    margin: 0 0 7px;
+
+    font-size: 8.5pt;
+    font-weight: 800;
+
+    color: var(--accent);
+
+    letter-spacing: 0.12em;
+}
+
+section p {
+    margin: 0;
+
+    color: var(--secondary);
+
+    line-height: 1.45;
+}
+
+
+/* ========================================
+   Company
+======================================== */
+
+.company {
+    margin-top: 8px;
+}
+
+.company-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    margin-bottom: 8px;
+}
+
+.company-header h3 {
+    display: inline;
+
+    margin: 0;
+
+    font-size: 13pt;
+}
+
+.company-header span {
+    margin-left: 5px;
+
+    color: var(--secondary);
+    font-size: 8.5pt;
+}
+
+.company-header time,
+.education time {
+    flex-shrink: 0;
+
+    color: var(--light);
+    font-size: 8pt;
+}
+
+
+/* ========================================
+   Project
+======================================== */
+
+article {
+    margin-top: 10px;
+
+    padding-top: 10px;
+
+    border-top: 1px solid var(--border);
+
+    page-break-inside: avoid;
+}
+
+/* 첫 번째 프로젝트는 선을 조금 약하게 */
+.company article:first-of-type {
+    border-top: none;
+    padding-top: 0;
+}
+
+article h4 {
+    margin: 0 0 5px;
+
+    font-size: 10pt;
+    font-weight: 700;
+}
+
+ul {
+    margin: 0;
+    padding-left: 16px;
+}
+
+li {
+    margin-bottom: 2px;
+
+    color: var(--secondary);
+}
+
+li strong {
+    color: var(--text);
+}
+
+
+/* ========================================
+   Tags
+======================================== */
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 4px;
+
+    margin-top: 6px;
+}
+
+.tags span {
+    padding: 2px 6px;
+
+    border-radius: 3px;
+
+    background: #f1f1ef;
+
+    color: #555;
+
+    font-size: 7pt;
+    font-weight: 600;
+}
+
+
+/* ========================================
+   Technical Skills
+======================================== */
+
+.skill-row {
+    display: grid;
+    grid-template-columns: 95px 1fr;
+    gap: 8px;
+
+    margin-bottom: 4px;
+}
+
+.skill-row strong {
+    font-size: 8.5pt;
+}
+
+.skill-row span {
+    color: var(--secondary);
+    font-size: 8.5pt;
+}
+
+
+/* ========================================
+   Education
+======================================== */
+
+.education {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 4px 0;
+
+    border-bottom: 1px solid var(--border);
+
+    page-break-inside: avoid;
+}
+
+.education strong {
+    display: block;
+}
+
+.education span {
+    color: var(--secondary);
+    font-size: 8pt;
+}
+
+.subsection-title {
+    margin-top: 11px !important;
+}
+
+
+/* ========================================
+   Certificate
+======================================== */
+
+.certificates-section {
+    page-break-inside: avoid;
+}
+
+.certificates-section .education {
+    padding-top: 2px;
+}
+
+
+/* ========================================
+   Print
+======================================== */
+
+@media print {
+
+    body {
+        background: white;
+    }
+
+    a {
+        color: inherit;
+    }
+
+    .resume-pdf {
+        max-width: none;
+    }
+
+    section,
+    article,
+    .education {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
