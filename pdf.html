@@ -1,415 +1,328 @@
-<!DOCTYPE html>
-<html lang="ko">
+@page {
+    size: A4;
+    margin: 8mm 15mm;
+}
 
-<head>
+:root {
+    --text: #171717;
+    --secondary: #666;
+    --light: #999;
+    --border: #e5e5e5;
+    --accent: #4f46c5;
+}
 
-    <meta charset="UTF-8">
+* {
+    box-sizing: border-box;
+}
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
 
-    <title>류지수 | AI Engineer Resume</title>
+body {
+    color: var(--text);
+    background: white;
 
-    <link
-        rel="stylesheet"
-        href="css/pdf.css"
-    >
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Pretendard",
+        "Noto Sans KR",
+        "Segoe UI",
+        sans-serif;
 
-</head>
+    font-size: 9.5pt;
+    line-height: 1.42;
 
+    -webkit-font-smoothing: antialiased;
+}
 
-<body>
+.resume-pdf {
+    width: 100%;
+    max-width: 180mm;
+    margin: 0 auto;
+}
 
-<div class="resume-pdf">
 
+/* ========================================
+   Header
+======================================== */
 
-    <!-- ========================================
-         Header
-    ========================================= -->
+.resume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 
-    <header class="resume-header">
+    padding-bottom: 10px;
 
-        <div>
+    border-bottom: 2px solid var(--text);
+}
 
-            <h1>
-                류지수
-            </h1>
+.resume-header h1 {
+    margin: 0;
 
-            <p class="role">
-                AI Engineer
-            </p>
+    font-size: 28pt;
+    line-height: 1;
 
-            <p class="specialty">
-                LLM · RAG · AI Agent · Backend
-            </p>
+    letter-spacing: -0.06em;
+}
 
-        </div>
+.role {
+    margin: 7px 0 0;
 
+    font-size: 14pt;
+    font-weight: 700;
+}
 
-        <div class="contact">
+.specialty {
+    margin: 4px 0 0;
 
-            <a href="https://github.com/JisooRyu99">
-                github.com/JisooRyu99
-            </a>
+    color: var(--secondary);
+}
 
-            <a href="https://velog.io/@js03210">
-                velog.io/@js03210
-            </a>
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 
-            <a href="mailto:cussion09@email.com">
-                cussion09@email.com
-            </a>
+    gap: 1px;
 
-        </div>
+    font-size: 8pt;
+}
 
-    </header>
+.contact a {
+    color: var(--secondary);
+    text-decoration: none;
+}
 
 
+/* ========================================
+   Section
+======================================== */
 
-    <!-- ========================================
-         Profile
-    ========================================= -->
+section {
+    margin-top: 11px;
 
-    <section>
+    page-break-inside: avoid;
+}
 
-        <h2>
-            PROFILE
-        </h2>
+section h2 {
+    margin: 0 0 5px;
 
-        <p>
-            실서비스 환경에서 LLM, RAG, AI Agent 시스템을 설계하고
-            성능·비용·안정성·데이터 보안 문제를 해결하는
-            실무 중심 AI Engineer입니다.
-        </p>
+    font-size: 8.5pt;
+    font-weight: 800;
 
-    </section>
+    color: var(--accent);
 
+    letter-spacing: 0.12em;
+}
 
+section p {
+    margin: 0;
 
-    <!-- ========================================
-         Experience
-    ========================================= -->
+    color: var(--secondary);
 
-    <section>
+    line-height: 1.45;
+}
 
-        <h2>
-            EXPERIENCE
-        </h2>
 
+/* ========================================
+   Company
+======================================== */
 
-        <div class="company">
+.company {
+    margin-top: 8px;
+}
 
+.company-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 
-            <!-- Company Header -->
+    margin-bottom: 8px;
+}
 
-            <div class="company-header">
+.company-header h3 {
+    display: inline;
 
-                <div>
+    margin: 0;
 
-                    <h3>
-                        GoyoAI
-                    </h3>
+    font-size: 13pt;
+}
 
-                    <span>
-                        AI Engineer
-                    </span>
+.company-header span {
+    margin-left: 5px;
 
-                </div>
+    color: var(--secondary);
+    font-size: 8.5pt;
+}
 
+.company-header time,
+.education time {
+    flex-shrink: 0;
 
-                <time>
-                    2023.12 — Present
-                </time>
+    color: var(--light);
+    font-size: 8pt;
+}
 
-            </div>
 
+/* ========================================
+   Project
+======================================== */
 
+article {
+    margin-top: 7px;
+    padding-top: 7px;
 
-            <!-- ========================================
-                 Project 1
-            ========================================= -->
+    border-top: 1px solid var(--border);
 
-            <article class="project">
+    page-break-inside: avoid;
+}
 
-                <h4>
-                    외부 LLM 활용을 위한 PII 보안 계층 및 경량 탐지 모델
-                </h4>
+/* 첫 번째 프로젝트는 선을 조금 약하게 */
+.company article:first-of-type {
+    border-top: none;
+    padding-top: 0;
+}
 
+article h4 {
+    margin: 0 0 5px;
 
-                <ul>
+    font-size: 10pt;
+    font-weight: 700;
+}
 
-                    <li>
-                        외부 LLM 호출 전 사용자 입력과 문서의 개인정보 및
-                        민감정보를 검사하는 PII 보안 계층을 설계하고
-                        실제 운영 환경에 적용
-                    </li>
+ul {
+    margin: 0;
+    padding-left: 16px;
+}
 
-                    <li>
-                        대용량 문서 입력 시 Qwen3 8B inference로 인한
-                        처리 시간 증가 문제를 개선하기 위해
-                        Qwen3 8B Teacher와 KLUE RoBERTa-large Student 간
-                        Knowledge Distillation을 적용하여
-                        경량 PII 탐지 모델을 프로토타입으로 구현
-                    </li>
+li {
+    margin-bottom: 2px;
 
-                    <li>
-                        Teacher와 Student의 탐지 결과를 비교하여
-                        주요 테스트 시나리오에서 경량 모델의 탐지 성능을 검증하고,
-                        <strong>
-                            평균 latency를 8.35초에서 0.06초로 단축하여
-                            약 130배의 응답 속도 개선
-                        </strong>
-                    </li>
+    color: var(--secondary);
+}
 
-                </ul>
+li strong {
+    color: var(--text);
+}
 
 
-                <div class="tags">
+/* ========================================
+   Tags
+======================================== */
 
-                    <span>PII Detection</span>
-                    <span>Qwen3 8B</span>
-                    <span>Knowledge Distillation</span>
-                    <span>RoBERTa</span>
+.tags {
+    display: flex;
+    flex-wrap: wrap;
 
-                </div>
+    gap: 4px;
 
-            </article>
+    margin-top: 6px;
+}
 
+.tags span {
+    padding: 2px 6px;
 
+    border-radius: 3px;
 
-            <!-- ========================================
-                 Project 2
-            ========================================= -->
+    background: #f1f1ef;
 
-            <article class="project">
+    color: #555;
 
-                <h4>
-                    Text2SQL 기반 정형 데이터 질의 시스템
-                </h4>
+    font-size: 7pt;
+    font-weight: 600;
+}
 
 
-                <ul>
+/* ========================================
+   Technical Skills
+======================================== */
 
-                    <li>
-                        기존 RAG 기반 질의 방식에서 유사도 검색만으로는
-                        정형 데이터를 정확하게 조회하기 어려운 문제를 해결하기 위해
-                        자연어 질문을 SQL로 변환하는 Text2SQL 구조를 적용
-                    </li>
+.skill-row {
+    display: grid;
+    grid-template-columns: 95px 1fr;
+    gap: 8px;
 
-                    <li>
-                        SQL Example을 pgvector에서 검색하여
-                        LLM의 SQL 생성을 보조하고,
-                        자연어 질의를 SQL 생성으로 연결하는
-                        Tool Calling 구조를 구성
-                    </li>
+    margin-bottom: 4px;
+}
 
-                    <li>
-                        SQL 생성 및 조회 결과를 서비스에서 활용할 수 있도록
-                        조회 결과와 전체 결과를 제공하는 API를 구현하고,
-                        전체 조회 결과를 CSV로 저장할 수 있도록 구성
-                    </li>
+.skill-row strong {
+    font-size: 8.5pt;
+}
 
-                </ul>
+.skill-row span {
+    color: var(--secondary);
+    font-size: 8.5pt;
+}
 
 
-                <div class="tags">
+/* ========================================
+   Education
+======================================== */
 
-                    <span>Text2SQL</span>
-                    <span>LLM</span>
-                    <span>Tool Calling</span>
-                    <span>PostgreSQL</span>
-                    <span>pgvector</span>
+.education {
+    display: flex;
+    justify-content: space-between;
 
-                </div>
+    padding: 4px 0;
 
-            </article>
+    border-bottom: 1px solid var(--border);
 
+    page-break-inside: avoid;
+}
 
+.education strong {
+    display: block;
+}
 
-            <!-- ========================================
-                 Project 3
-            ========================================= -->
+.education span {
+    color: var(--secondary);
+    font-size: 8pt;
+}
 
-            <article class="project">
+.subsection-title {
+    margin-top: 11px !important;
+}
 
-                <h4>
-                    역할 기반 AI Agent 플랫폼 설계 및 개발
-                </h4>
 
+/* ========================================
+   Certificate
+======================================== */
 
-                <ul>
+.certificates-section {
+    page-break-inside: avoid;
+}
 
-                    <li>
-                        역할 기반 AI Agent 구축을 위해,
-                        Agent 이름·설명을 기반으로 시스템 프롬프트를 생성하고
-                        참고 문서와 Tool을 설정할 수 있는 Builder를 구현
-                    </li>
+.certificates-section .education {
+    padding-top: 2px;
+}
 
-                    <li>
-                        메일·일정·사내 공지·Notion·날씨·사내 투표 등의 기능을
-                        LangChain 기반 Tool Calling으로 연동하여
-                        Agent가 실제 업무를 수행할 수 있도록 구성
-                    </li>
 
-                    <li>
-                        RAG 문서 검색과 Perplexity 기반 웹 검색을
-                        질의에 따라 분기하는 Hybrid 구조를 구현하고,
-                        텍스트·참고 문서 기반의 답변 형식 커스터마이징 기능을 구현
-                    </li>
+/* ========================================
+   Print
+======================================== */
 
-                </ul>
+@media print {
 
+    body {
+        background: white;
+    }
 
-                <div class="tags">
+    a {
+        color: inherit;
+    }
 
-                    <span>LangChain</span>
-                    <span>Tool Calling</span>
-                    <span>RAG</span>
-                    <span>AI Agent</span>
+    .resume-pdf {
+        max-width: none;
+    }
 
-                </div>
-
-            </article>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ========================================
-         Technical Skills
-    ========================================= -->
-
-    <section>
-
-        <h2>
-            TECHNICAL SKILLS
-        </h2>
-
-
-        <div class="skill-row">
-
-            <strong>
-                AI / LLM
-            </strong>
-
-            <span>
-                LangChain · LangGraph · RAG · Text2SQL · PII Detection
-            </span>
-
-        </div>
-
-
-        <div class="skill-row">
-
-            <strong>
-                Backend
-            </strong>
-
-            <span>
-                Python · FastAPI · Redis
-            </span>
-
-        </div>
-
-
-        <div class="skill-row">
-
-            <strong>
-                Data
-            </strong>
-
-            <span>
-                PostgreSQL · pgvector · ChromaDB
-            </span>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ========================================
-         Education
-    ========================================= -->
-
-    <section>
-
-        <h2>
-            EDUCATION
-        </h2>
-
-
-        <div class="education">
-
-            <div>
-
-                <strong>
-                    울산대학교
-                </strong>
-
-                <span>
-                    IT융합 · 소프트웨어공학
-                </span>
-
-            </div>
-
-
-            <time>
-                2018.03 — 2023.02
-            </time>
-
-        </div>
-
-
-        <div class="education">
-
-            <div>
-
-                <strong>
-                    Naver Boostcamp AI Tech 4기
-                </strong>
-
-                <span>
-                    추천 시스템 · 머신러닝 엔지니어링
-                </span>
-
-            </div>
-
-
-            <time>
-                2022.09 — 2023.02
-            </time>
-
-        </div>
-
-
-        <h2 class="subsection-title">
-            CERTIFICATE
-        </h2>
-
-
-        <div class="education">
-
-            <strong>
-                ADsP
-            </strong>
-
-            <time>
-                2024.06
-            </time>
-
-        </div>
-
-    </section>
-
-
-</div>
-
-</body>
-
-</html>
+    section,
+    article,
+    .education {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
