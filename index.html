@@ -219,63 +219,59 @@
                     <ul class="achievements">
 
                         <li>
-
                             <strong>
-                                외부 LLM의 높은 답변 품질을 활용하면서도
-                                사내 개인정보가 외부로 전달되는 위험을 줄이기 위해
+                                외부 LLM 사용 시 사내 개인정보가 외부로 전달되는
+                                위험을 줄이기 위해
                             </strong>
 
-                            LLM 호출 전에 개인정보 및 민감정보를 검사하는
-                            PII 보안 계층을 설계하고 실제 운영 환경에 적용했습니다.
-                            사용자 입력과 문서에서 PII를 탐지하고,
-                            탐지된 요청은 차단하거나 관리자가 허용한 경우
-                            마스킹 후 처리하도록 구성했습니다.
+                            LLM 호출 전에 사용자 입력과 문서의 개인정보 및
+                            민감정보를 탐지하는 PII 보안 계층을 설계하고
+                            실제 운영 환경에 적용했습니다.
 
+                            탐지된 요청은 차단하거나,
+                            관리자가 허용한 경우 PII를 마스킹한 후
+                            외부 LLM을 호출하도록 구성했습니다.
                         </li>
 
 
                         <li>
-
                             <strong>
-                                기존 PII 탐지 과정에서 대용량 문서 입력 시
-                                온프레미스 Qwen3 8B의 inference로 인해
-                                요청 처리 시간이 증가하는 문제를 개선하기 위해
+                                기존 Qwen3 8B 기반 PII Detection의 높은 inference latency를
+                                개선하기 위해
                             </strong>
 
-                            Qwen3 8B를 Teacher로 활용하여 합성 데이터와
-                            PII Entity Annotation을 생성하고,
-                            KLUE RoBERTa-large 기반 Student 모델에
+                            Qwen3 8B를
+                            <strong>Teacher 모델</strong>로 활용하여
+                            합성 데이터와 PII Entity Annotation을 생성하고,
+
+                            KLUE RoBERTa-large를
+                            <strong>Student 모델</strong>로 선정하여
                             Knowledge Distillation을 적용했습니다.
 
-                            Student 모델은 생년월일, 계좌번호, 주소, 성별 등의
-                            PII를 탐지하도록 학습하여
-                            LLM 기반 탐지를 대체할 수 있는
-                            경량 sLM을 프로토타입으로 구현했습니다.
-
+                            이를 통해 생년월일, 계좌번호, 주소, 성별 등의
+                            PII Entity를 탐지하는 경량 sLM을 프로토타입으로 구현했습니다.
                         </li>
 
 
                         <li>
-
                             <strong>
-                                Teacher와 Student의 PII 검출 결과를 비교하여
-                                경량 모델의 탐지 성능을 검증하고,
+                                Qwen3 8B (Teacher)와
+                                KLUE RoBERTa-large (Student)의
+                                PII 검출 결과를 비교하여 모델 성능을 검증하고,
                             </strong>
 
                             긴 문맥 및 PII가 없는 입력을 포함한
                             주요 테스트 시나리오에서
-                            LLM과 대부분 동일한 PII 검출 결과를 확인했습니다.
+                            Student 모델이 Teacher 모델과
+                            대부분 동일한 PII 검출 결과를 보이는 것을 확인했습니다.
 
-                            일부 한자 날짜 표기,
-                            성별 정보의 오탐,
-                            주소 영역의 확장 문제를
-                            추가 개선 과제로 도출했으며,
+                            일부 한자 날짜 표기, 성별 정보의 오탐,
+                            주소 영역의 확장 문제를 추가 개선 과제로 도출했습니다.
 
                             <strong>
-                                평균 latency를 8.35초에서 0.06초로 단축하여
+                                평균 latency는 8.35초에서 0.06초로 단축하여
                                 약 130배의 응답 속도 개선을 확인했습니다.
                             </strong>
-
                         </li>
 
                     </ul>
@@ -288,8 +284,8 @@
 
                         <span>PII Detection</span>
                         <span>Qwen3 8B</span>
+                        <span>KLUE RoBERTa-large</span>
                         <span>Knowledge Distillation</span>
-                        <span>RoBERTa</span>
 
                     </div>
 
@@ -298,7 +294,7 @@
 
 
                 <!-- ========================================
-                        Project 2
+                    Project 2
                 ========================================= -->
 
                 <article class="project">
@@ -309,7 +305,7 @@
 
                             <h4>
                                 자연어 기반 정형 데이터 질의 및
-                                결과 테이블 제공
+                                Text2SQL 시스템
                             </h4>
 
                             <p class="project-category">
@@ -321,51 +317,50 @@
                     </header>
 
 
-                   <ul class="achievements">
+                    <ul class="achievements">
 
                         <li>
-
                             <strong>
-                                기존 RAG 기반 질의 방식에서 유사도 검색만으로는
-                                사용자가 원하는 정형 데이터를 정확하게 조회하기 어려운
-                                문제를 해결하기 위해
+                                기존 ChromaDB 기반 RAG의 유사도 검색 방식에서는
+                                관련 데이터가 여러 건 존재하더라도
+                                일부 Chunk만 검색되는 문제를 해결하기 위해
                             </strong>
 
-                            자연어 질문을 SQL로 변환하고
-                            실제 데이터베이스에서 조회하는
-                            Text2SQL 기반 구조를 적용했습니다.
-
+                            B2B 서비스의 정형 데이터를 대상으로
+                            자연어 질문을 SQL로 변환하여
+                            PostgreSQL에서 직접 조회하는
+                            Text2SQL 시스템을 설계하고
+                            실제 운영 환경에 적용했습니다.
                         </li>
 
 
                         <li>
-
-                            자연어 질의를 데이터 조회로 연결하기 위해
-
                             <strong>
-                                SQL Example 검색 → SQL 생성 → DB 실행
+                                LLM의 SQL 생성을 보조하기 위해
+                                pgvector에서 유사 질문-쿼리 예제 64개를 검색하고,
+                                BAAI/bge-reranker-v2-m3를 활용해
+                                상위 5개 Few-shot 예제를 선별했습니다.
                             </strong>
 
-                            순으로 동작하는 Tool Calling 구조를 구성했습니다.
-
-                            SQL Example을 pgvector에서 검색하여
-                            LLM의 SQL 생성을 보조하고,
-                            생성된 SQL을 DB에서 실행하여
-                            조회 결과를 백엔드로 전달하는 구조를 구현했습니다.
-
+                            또한 테이블 DDL, 컬럼 설명 및
+                            샘플 데이터 3행을 Schema Context로 제공하여
+                            LLM이 데이터베이스 구조를 기반으로
+                            SQL을 생성할 수 있도록 구성했습니다.
                         </li>
 
 
                         <li>
-
                             <strong>
-                                SQL 실행 결과를 서비스에서 활용할 수 있도록
-                                조회 결과와 전체 결과를 제공하는 API를 구현했습니다.
+                                생성된 SQL을 PostgreSQL에서 실행하고,
+                                실행 오류가 발생할 경우
+                                DB 오류 메시지를 LLM에 전달하여
+                                SQL을 수정하고 재실행하는 흐름을 구성했습니다.
                             </strong>
 
-                            일부 조회 결과를 제공하고,
-                            전체 SQL 실행 결과는 CSV로 저장할 수 있도록 구성했습니다.
-
+                            실행 결과는 TSV 형태로 제공하고,
+                            마지막 SQL을 재실행하여 전체 조회 결과를
+                            Interactive Table로 제공하며
+                            CSV 및 Excel Export를 지원했습니다.
                         </li>
 
                     </ul>
@@ -381,9 +376,9 @@
                         <span>Tool Calling</span>
                         <span>PostgreSQL</span>
                         <span>pgvector</span>
+                        <span>bge-reranker-v2-m3</span>
 
                     </div>
-
 
                 </article>
 
@@ -400,11 +395,11 @@
                         <div>
 
                             <h4>
-                                역할 기반 AI Agent 플랫폼 설계 및 개발
+                                역할 기반 AI Agent 구조 설계 및 개발
                             </h4>
 
                             <p class="project-category">
-                                LangChain · Tool Calling · RAG · AI Agent
+                                AI Agent · Tool Calling · RAG · LangChain
                             </p>
 
                         </div>
@@ -415,24 +410,41 @@
                     <ul class="achievements">
 
                         <li>
-                            역할 기반 AI Agent를 쉽게 구성할 수 있도록
-                            Agent 이름·설명을 기반으로 시스템 프롬프트를 생성하고,
-                            참고 문서와 Tool을 설정할 수 있는
-                            Agent Builder를 구현했습니다.
+                            <strong>
+                                역할에 따라 필요한 업무 기능과 참고 정보를 활용할 수 있도록
+                                기존 RAG·Reranker와 다양한 업무 서비스를
+                                Agent Tool로 연결하는 구조를 설계했습니다.
+                            </strong>
+
+                            메일·일정·사내 공지·Notion·날씨·사내 투표 등의
+                            Tool을 연동하여 Agent가 사내 정보 조회와
+                            업무 기능을 수행할 수 있도록 구성했습니다.
                         </li>
 
-                        <li>
-                            메일·일정·사내 공지·Notion·날씨·사내 투표 등의 기능을
-                            LangChain 기반 Tool Calling으로 연동하여
-                            Agent가 실제 업무를 수행할 수 있도록 구성했습니다.
-                        </li>
 
                         <li>
-                            RAG 문서 검색과 Perplexity 기반 웹 검색을
-                            질의 유형에 따라 분기하는 Hybrid 구조를 구현하고,
-                            텍스트 입력 또는 참고 문서를 기반으로
-                            Agent의 답변 형식을 설정할 수 있는
-                            커스터마이징 기능을 구현했습니다.
+                            <strong>
+                                Notion Tool을 직접 구현하여
+                                키워드 기반 페이지 검색부터 상세 내용 조회,
+                                데이터 가공 및 검색 결과 후처리까지 구성했습니다.
+                            </strong>
+
+                            여러 검색 키워드에 대한 API 요청을 비동기로 처리하고,
+                            기존 Reranker를 활용하여 검색 결과를 재정렬한 뒤
+                            중복 문서를 제거하고 관련도 순으로 제공하도록 구현했습니다.
+                        </li>
+
+
+                        <li>
+                            <strong>
+                                기존 RAG와 Reranker를 Agent 구조에 적용하고,
+                                외부 최신 정보가 필요한 질의에는
+                                Perplexity 기반 웹 검색을 활용할 수 있도록 구성했습니다.
+                            </strong>
+
+                            질의 특성에 따라 사내 문서 검색과
+                            외부 웹 검색 및 업무 Tool을 활용할 수 있도록
+                            Agent의 정보 조회 구조를 설계했습니다.
                         </li>
 
                     </ul>
@@ -446,11 +458,11 @@
                         <span>LangChain</span>
                         <span>Tool Calling</span>
                         <span>RAG</span>
-                        <span>AI Agent</span>
+                        <span>Reranker</span>
 
                     </div>
-                    </article>
 
+                </article>
 
                 </article>
                 <!-- GoyoAI experience END -->
