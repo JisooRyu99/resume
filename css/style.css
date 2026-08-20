@@ -28,6 +28,7 @@
 
 * {
     box-sizing: border-box;
+
     margin: 0;
     padding: 0;
 }
@@ -126,6 +127,7 @@ strong {
     margin-bottom: 8px;
 
     font-size: clamp(42px, 5vw, 64px);
+
     line-height: 1;
 
     font-weight: 800;
@@ -137,6 +139,7 @@ strong {
     color: var(--text-secondary);
 
     font-size: clamp(20px, 3vw, 30px);
+
     font-weight: 500;
 
     letter-spacing: -0.03em;
@@ -145,6 +148,7 @@ strong {
 .links {
     display: flex;
     flex-wrap: wrap;
+
     gap: 10px;
 
     margin-top: 32px;
@@ -172,6 +176,7 @@ strong {
     transform: translateY(-2px);
 
     background: var(--text);
+
     border-color: var(--text);
 
     color: #ffffff;
@@ -196,6 +201,7 @@ strong {
 
 .section-title {
     position: sticky;
+
     top: 40px;
 
     align-self: start;
@@ -216,6 +222,7 @@ strong {
 
 .section-title h2 {
     font-size: 27px;
+
     font-weight: 750;
 
     line-height: 1.2;
@@ -225,6 +232,7 @@ strong {
 
 .section-content {
     width: 100%;
+
     max-width: var(--content-width);
 }
 
@@ -241,6 +249,7 @@ strong {
     margin-bottom: 20px;
 
     font-size: 24px;
+
     font-weight: 600;
 
     line-height: 1.5;
@@ -254,6 +263,7 @@ strong {
     color: var(--text-secondary);
 
     font-size: 15px;
+
     line-height: 1.8;
 }
 
@@ -272,6 +282,7 @@ strong {
 
 .experience-header {
     display: flex;
+
     justify-content: space-between;
     align-items: flex-start;
 
@@ -284,6 +295,7 @@ strong {
     margin-bottom: 3px;
 
     font-size: 25px;
+
     font-weight: 750;
 
     line-height: 1.3;
@@ -305,6 +317,7 @@ strong {
     color: var(--text-light);
 
     font-size: 12px;
+
     font-weight: 500;
 
     white-space: nowrap;
@@ -319,6 +332,7 @@ strong {
     position: relative;
 
     margin-bottom: 46px;
+
     padding-left: 25px;
 
     border-left: 2px solid var(--border);
@@ -352,6 +366,7 @@ strong {
     margin-bottom: 4px;
 
     font-size: 19px;
+
     font-weight: 700;
 
     line-height: 1.45;
@@ -363,6 +378,7 @@ strong {
     color: var(--text-light);
 
     font-size: 11px;
+
     font-weight: 500;
 
     letter-spacing: 0.01em;
@@ -375,7 +391,9 @@ strong {
 
 .achievements {
     display: flex;
+
     flex-direction: column;
+
     gap: 11px;
 
     margin-bottom: 20px;
@@ -389,6 +407,7 @@ strong {
     color: var(--text-secondary);
 
     font-size: 14px;
+
     line-height: 1.75;
 }
 
@@ -396,6 +415,7 @@ strong {
     content: "•";
 
     position: absolute;
+
     left: 0;
     top: 0;
 
@@ -412,53 +432,52 @@ strong {
 
 
 /* ========================================
-   Technical Excellence
+   Agent Flow
 ======================================== */
 
-/* .technical-excellence {
-    margin-top: 8px;
-    margin-bottom: 0;
+.agent-flow {
+    display: flex;
 
-    padding: 22px 24px 22px 25px;
+    flex-wrap: wrap;
 
-    border: 0;
+    align-items: center;
+
+    gap: 7px;
+
+    margin: 20px 0;
+
+    padding: 16px;
+
     border-radius: var(--radius);
 
-    background: var(--text);
-    color: #ffffff;
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    font-size: 11px;
+
+    font-weight: 650;
+
+    color: #333333;
 }
 
-.technical-excellence::before {
-    display: none;
+.agent-flow .step {
+    padding: 6px 9px;
+
+    border-radius: 5px;
+
+    background: var(--accent-light);
+
+    color: #5149c9;
+
+    font-weight: 700;
 }
 
-.technical-excellence .project-header {
-    margin-bottom: 15px;
-}
+.agent-flow .arrow {
+    color: var(--text-light);
 
-.technical-excellence .project-header h4 {
-    color: #ffffff;
+    font-weight: 700;
 }
-
-.technical-excellence .project-category {
-    color: #999999;
-}
-
-.technical-excellence .achievements {
-    margin-bottom: 18px;
-}
-
-.technical-excellence .achievements li {
-    color: #cccccc;
-}
-
-.technical-excellence .achievements li::before {
-    color: #8d87ff;
-}
-
-.technical-excellence .achievements strong {
-    color: #ffffff;
-} */
 
 
 /* ========================================
@@ -467,12 +486,15 @@ strong {
 
 .tech-stack {
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 6px;
 }
 
 .tech-stack span {
     display: inline-flex;
+
     align-items: center;
 
     padding: 4px 9px;
@@ -484,40 +506,10 @@ strong {
     color: #555555;
 
     font-size: 11px;
+
     font-weight: 600;
 
     line-height: 1.5;
-}
-
-.technical-excellence .tech-stack span {
-    background: #2b2b2b;
-    color: #cccccc;
-}
-
-
-/* ========================================
-   Previous Experience
-======================================== */
-
-.experience.compact {
-    margin-top: 55px;
-    margin-bottom: 0;
-
-    padding-top: 38px;
-
-    border-top: 1px solid var(--border);
-}
-
-.experience.compact .experience-header {
-    margin-bottom: 22px;
-}
-
-.experience.compact .achievements {
-    gap: 9px;
-}
-
-.experience.compact .achievements li {
-    font-size: 14px;
 }
 
 
@@ -527,6 +519,7 @@ strong {
 
 .skills {
     display: flex;
+
     flex-direction: column;
 
     gap: 30px;
@@ -536,6 +529,7 @@ strong {
     margin-bottom: 11px;
 
     font-size: 14px;
+
     font-weight: 700;
 
     letter-spacing: -0.02em;
@@ -543,6 +537,7 @@ strong {
 
 .skill-list {
     display: flex;
+
     flex-wrap: wrap;
 
     gap: 7px;
@@ -550,11 +545,13 @@ strong {
 
 .skill-list span {
     display: inline-flex;
+
     align-items: center;
 
     padding: 6px 11px;
 
     border: 1px solid var(--border);
+
     border-radius: 6px;
 
     background: var(--surface);
@@ -562,6 +559,7 @@ strong {
     color: #555555;
 
     font-size: 12px;
+
     font-weight: 600;
 
     transition:
@@ -585,6 +583,7 @@ strong {
 
 .education-item {
     display: flex;
+
     justify-content: space-between;
     align-items: flex-start;
 
@@ -603,6 +602,7 @@ strong {
     margin-bottom: 3px;
 
     font-size: 16px;
+
     font-weight: 700;
 
     letter-spacing: -0.02em;
@@ -633,6 +633,7 @@ strong {
 
 .certificate {
     display: flex;
+
     justify-content: space-between;
     align-items: center;
 
@@ -643,6 +644,14 @@ strong {
 
 .certificate strong {
     font-size: 15px;
+}
+
+.certificate .issuer {
+    margin-left: 8px;
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
 }
 
 .certificate time {
@@ -673,6 +682,7 @@ strong {
 
 @page {
     size: A4;
+
     margin: 14mm 15mm;
 }
 
@@ -696,14 +706,13 @@ strong {
 
     .resume {
         width: 100%;
+
         max-width: none;
 
         margin: 0;
     }
 
-    /* ----------------------------------------
-       Header
-    ---------------------------------------- */
+    /* Header */
 
     .hero {
         min-height: auto;
@@ -754,9 +763,7 @@ strong {
         color: var(--text-light);
     }
 
-    /* ----------------------------------------
-       Section
-    ---------------------------------------- */
+    /* Section */
 
     .section {
         grid-template-columns: 125px 1fr;
@@ -784,14 +791,13 @@ strong {
         max-width: none;
     }
 
-    /* ----------------------------------------
-       Profile
-    ---------------------------------------- */
+    /* Profile */
 
     .summary {
         margin-bottom: 10px;
 
         font-size: 14pt;
+
         line-height: 1.45;
     }
 
@@ -799,12 +805,11 @@ strong {
         margin-bottom: 6px;
 
         font-size: 9.5pt;
+
         line-height: 1.65;
     }
 
-    /* ----------------------------------------
-       Experience
-    ---------------------------------------- */
+    /* Experience */
 
     .experience {
         margin-bottom: 9mm;
@@ -849,6 +854,7 @@ strong {
 
     .project-header h4 {
         font-size: 10.5pt;
+
         line-height: 1.4;
     }
 
@@ -866,8 +872,29 @@ strong {
         padding-left: 12px;
 
         font-size: 8.7pt;
+
         line-height: 1.55;
     }
+
+    /* Agent Flow */
+
+    .agent-flow {
+        gap: 4px;
+
+        margin: 3mm 0;
+
+        padding: 2.5mm;
+
+        border-radius: 4px;
+
+        font-size: 7pt;
+    }
+
+    .agent-flow .step {
+        padding: 3px 5px;
+    }
+
+    /* Tech */
 
     .tech-stack {
         gap: 4px;
@@ -879,41 +906,7 @@ strong {
         font-size: 7pt;
     }
 
-    /* ----------------------------------------
-       Technical Excellence
-    ---------------------------------------- */
-
-    .technical-excellence {
-        margin-top: 2mm;
-
-        padding: 4mm;
-
-        border-radius: 6px;
-
-        break-inside: avoid;
-    }
-
-    .technical-excellence .achievements li {
-        font-size: 8.5pt;
-    }
-
-    /* ----------------------------------------
-       Previous Experience
-    ---------------------------------------- */
-
-    .experience.compact {
-        margin-top: 5mm;
-
-        padding-top: 5mm;
-    }
-
-    .experience.compact .achievements li {
-        font-size: 8.7pt;
-    }
-
-    /* ----------------------------------------
-       Skills
-    ---------------------------------------- */
+    /* Skills */
 
     .skills {
         gap: 5mm;
@@ -937,9 +930,7 @@ strong {
         font-size: 7.5pt;
     }
 
-    /* ----------------------------------------
-       Education
-    ---------------------------------------- */
+    /* Education */
 
     .education-item {
         padding: 3mm 0;
@@ -957,9 +948,7 @@ strong {
         font-size: 7.5pt;
     }
 
-    /* ----------------------------------------
-       Certificates
-    ---------------------------------------- */
+    /* Certificates */
 
     .certificate {
         padding: 3mm 0;
@@ -969,13 +958,15 @@ strong {
         font-size: 9pt;
     }
 
+    .certificate .issuer {
+        font-size: 8pt;
+    }
+
     .certificate time {
         font-size: 7.5pt;
     }
 
-    /* ----------------------------------------
-       Footer
-    ---------------------------------------- */
+    /* Footer */
 
     .footer {
         padding: 5mm 0;
@@ -983,9 +974,7 @@ strong {
         font-size: 7.5pt;
     }
 
-    /* ----------------------------------------
-       Page Break Control
-    ---------------------------------------- */
+    /* Page Break */
 
     .experience,
     .project,
@@ -1004,6 +993,7 @@ strong {
 
     a {
         color: inherit;
+
         text-decoration: none;
     }
 }
@@ -1109,10 +1099,6 @@ strong {
 
     .project-header h4 {
         font-size: 18px;
-    }
-
-    .technical-excellence {
-        padding: 20px;
     }
 
     .education-item {
