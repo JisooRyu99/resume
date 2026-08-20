@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -10,29 +8,26 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>류지수 | AI Engineer Resume</title>
+    <title>
+        류지수 | AI Engineer Resume
+    </title>
 
     <link
         rel="stylesheet"
         href="css/pdf.css"
     >
-
 </head>
-
 
 <body>
 
 <div class="resume-pdf">
 
-
     <!-- ========================================
          Header
     ========================================= -->
-
     <header class="resume-header">
 
         <div>
-
             <h1>
                 류지수
             </h1>
@@ -44,9 +39,7 @@
             <p class="specialty">
                 LLM · RAG · AI Agent · Backend
             </p>
-
         </div>
-
 
         <div class="contact">
 
@@ -67,11 +60,9 @@
     </header>
 
 
-
     <!-- ========================================
          Profile
     ========================================= -->
-
     <section>
 
         <h2>
@@ -79,39 +70,35 @@
         </h2>
 
         <p>
-            실서비스 환경에서 AI 시스템의
+            실서비스 환경에서
             <strong>
-                정확도, 성능, 보안 및 안정성 문제
+                LLM · RAG · AI Agent를 활용해
+                AI 시스템을 개발하는 AI Engineer
             </strong>
-            를 해결하는 AI Engineer입니다.
-            LangChain 기반 AI Agent와 RAG 시스템을 설계하고,
-            LLM 기반 PII Detection 및 Text2SQL 시스템을 개발해왔습니다.
+            입니다.
+            B2B 환경에서 LLM 기반 PII Detection,
+            Text2SQL, RAG 및 Tool Calling 기반
+            AI Agent를 설계하고 개발했습니다.
         </p>
 
     </section>
 
 
-
     <!-- ========================================
          Experience
     ========================================= -->
-
     <section>
 
         <h2>
             EXPERIENCE
         </h2>
 
-
         <div class="company">
 
-
             <!-- Company Header -->
-
             <div class="company-header">
 
                 <div>
-
                     <h3>
                         GoyoAI
                     </h3>
@@ -119,9 +106,7 @@
                     <span>
                         AI Engineer
                     </span>
-
                 </div>
-
 
                 <time>
                     2023.12 — Present
@@ -130,52 +115,54 @@
             </div>
 
 
-
             <!-- ========================================
                  Project 1
             ========================================= -->
-
             <article class="project">
 
                 <h4>
                     외부 LLM 활용을 위한 PII 보안 계층 및 경량 탐지 모델
                 </h4>
 
-
                 <ul>
 
                     <li>
-                        외부 LLM 호출 전 사용자 입력과 문서의 개인정보 및
-                        민감정보를 탐지하는 PII 보안 계층을 설계하고
-                        실제 운영 환경에 적용
+                        외부 LLM 호출 전 사용자 입력과 문서의
+                        개인정보 및 민감정보를 탐지하는
+                        <strong>
+                            PII 보안 계층을 설계하고 운영 환경에 적용
+                        </strong>.
+                        탐지된 요청은 차단하거나,
+                        관리자가 허용한 경우 PII를 마스킹한 후
+                        외부 LLM을 호출하도록 구성
                     </li>
 
                     <li>
-                        대용량 문서 입력 시
+                        Qwen3 8B를 Teacher 모델로 활용해
+                        실제 OCR 문서와 LLM 기반 synthetic data를 바탕으로
+                        학습 데이터를 구성하고,
                         <strong>
-                            Qwen3 8B Teacher
+                            KLUE RoBERTa-large Student 모델에
+                            Knowledge Distillation을 적용
                         </strong>
-                        의 높은 inference latency를 개선하기 위해
-                        합성 데이터와 PII Entity Annotation을 생성하고,
-                        <strong>
-                            KLUE RoBERTa-large Student
-                        </strong>
-                        에 Knowledge Distillation을 적용하여
-                        경량 PII 탐지 모델을 프로토타입으로 구현
+                        하여 경량 PII 탐지 모델을 프로토타입으로 구현.
+                        OCR 특유의 개행 및 문자 변형을 포함한
+                        <strong>약 50개 테스트 케이스</strong>로
+                        Teacher/Student 모델의 탐지 결과를 비교 검증
                     </li>
 
                     <li>
-                        Teacher와 Student의 PII 검출 결과를 비교하여
-                        긴 문맥 및 PII가 없는 입력 등을 포함한
-                        주요 테스트 시나리오에서 성능을 검증하고,
                         <strong>
-                            평균 latency를 8.35초에서 0.06초로 단축하여
+                            평균 inference latency를
+                            8.35초 → 0.06초로 단축하여
                             약 130배의 응답 속도 개선
                         </strong>
+                        을 확인하고,
+                        한자 날짜 표기·성별 오탐·주소 영역 확장 등
+                        추가 개선이 필요한 케이스를 도출
                     </li>
 
                 </ul>
-
 
                 <div class="tags">
 
@@ -189,60 +176,51 @@
             </article>
 
 
-
             <!-- ========================================
                  Project 2
             ========================================= -->
-
             <article class="project">
 
                 <h4>
                     자연어 기반 정형 데이터 질의 및 Text2SQL 시스템
                 </h4>
 
-
                 <ul>
 
                     <li>
-                        기존 ChromaDB 기반 RAG의 유사도 검색 방식에서는
-                        관련 데이터가 여러 건 존재하더라도
-                        일부 Chunk만 검색되는 문제를 해결하기 위해,
+                        기존 ChromaDB 기반 RAG의 유사도 검색 방식에서
+                        관련 데이터가 여러 건 존재하더라도 일부 Chunk만
+                        검색되는 문제를 해결하기 위해,
                         자연어 질문을 SQL로 변환하여
-                        PostgreSQL에서 직접 조회하는
-                        Text2SQL 시스템을 설계하고
-                        실제 운영 환경에 적용
+                        <strong>
+                            PostgreSQL에서 직접 조회하는
+                            Text2SQL 시스템을 설계하고 운영 환경에 적용
+                        </strong>
                     </li>
 
                     <li>
-                        LLM의 SQL 생성을 보조하기 위해
                         pgvector에서 유사 질문-쿼리 예제
-                        <strong>
-                            64개를 검색한 뒤
-                            BAAI/bge-reranker-v2-m3로
-                            상위 5개 Few-shot 예제를 선별
-                        </strong>
-                        하고,
+                        <strong>64개를 검색</strong>하고
+                        BAAI/bge-reranker-v2-m3로
+                        <strong>상위 5개 Few-shot 예제를 선별</strong>.
                         테이블 DDL·컬럼 설명·샘플 데이터 3행을
                         Schema Context로 제공하여
-                        데이터베이스 구조를 기반으로 SQL을 생성하도록 구성
+                        LLM이 데이터베이스 구조를 기반으로
+                        SQL을 생성하도록 구성
                     </li>
 
                     <li>
-                        생성된 SQL을 PostgreSQL에서 실행하고,
-                        실행 오류 발생 시
+                        생성된 SQL을 실행하고 오류 발생 시
                         <strong>
                             DB 오류 메시지를 LLM에 전달하여
                             SQL을 수정하고 재실행
                         </strong>
-                        하는 흐름을 구성했습니다.
-                        조회 결과는 TSV 형태로 제공하고,
-                        마지막 SQL을 재실행하여
-                        전체 결과를 Interactive Table로 제공하며
+                        하는 흐름을 구현.
+                        조회 결과는 Interactive Table로 제공하고
                         CSV 및 Excel Export를 지원
                     </li>
 
                 </ul>
-
 
                 <div class="tags">
 
@@ -258,53 +236,44 @@
             </article>
 
 
-
             <!-- ========================================
                  Project 3
             ========================================= -->
-
             <article class="project">
 
                 <h4>
                     역할 기반 AI Agent 구조 설계 및 개발
                 </h4>
 
-
                 <ul>
 
                     <li>
-                        역할에 따라 필요한 업무 기능과 참고 정보를 활용할 수 있도록
-                        기존 RAG·Reranker와 다양한 업무 서비스를
-                        Agent Tool로 연결하는 구조를 설계하고,
-                        메일·일정·사내 공지·Notion·날씨·사내 투표 등의
-                        기능을 연동
+                        사용자 질문에 따라 필요한 기능과 정보를
+                        Agent가 자율적으로 선택할 수 있도록
+                        기존 RAG·Reranker와 사내 업무 서비스를
+                        <strong>
+                            Agent Tool로 구성하고
+                            LLM 기반 Tool Calling 구조를 설계
+                        </strong>.
+                        문서 검색, 업무 데이터 조회 및 외부 정보 검색 등의
+                        기능을 Tool로 구성하여
+                        질문의 목적과 상황에 따라 적절한 Tool을
+                        선택하고 실행하도록 구현
                     </li>
 
                     <li>
                         <strong>
-                            Notion Tool을 직접 구현
+                            사용자 질문 → LLM의 Tool 선택 → 데이터 조회
+                            → LLM 입력 데이터 구성 → 답변 생성
                         </strong>
-                        하여 키워드 기반 페이지 검색부터
-                        상세 내용 조회, 데이터 가공 및 검색 결과 후처리까지 구성.
-                        여러 검색 키워드에 대한 API 요청을 비동기로 처리하고,
-                        기존 Reranker를 활용하여 검색 결과를 재정렬한 뒤
-                        중복 문서를 제거하고 관련도 순으로 제공
-                    </li>
-
-                    <li>
-                        기존 RAG와 Reranker를 Agent 구조에 적용하고,
-                        외부 최신 정보가 필요한 질의에는
-                        <strong>
-                            Perplexity 기반 웹 검색
-                        </strong>
-                        을 활용할 수 있도록 구성하여
-                        사내 문서 검색과 외부 웹 검색 및
-                        업무 Tool을 Agent가 활용할 수 있는
-                        정보 조회 구조를 설계
+                        의 실행 흐름을 구현.
+                        문서 검색이 필요한 경우 RAG·Reranker를 활용하고,
+                        업무 데이터가 필요한 경우 백엔드 API를 호출하여
+                        조회된 데이터를 LLM이 처리하기 적합한 형태로
+                        구성한 후 최종 답변을 생성하도록 구현
                     </li>
 
                 </ul>
-
 
                 <div class="tags">
 
@@ -312,29 +281,24 @@
                     <span>Tool Calling</span>
                     <span>RAG</span>
                     <span>Reranker</span>
-                    <span>Perplexity</span>
 
                 </div>
 
             </article>
-
 
         </div>
 
     </section>
 
 
-
     <!-- ========================================
          Technical Skills
     ========================================= -->
-
     <section>
 
         <h2>
             TECHNICAL SKILLS
         </h2>
-
 
         <div class="skill-row">
 
@@ -343,12 +307,11 @@
             </strong>
 
             <span>
-                LLM · RAG · AI Agent · Text2SQL · PII Detection ·
-                Knowledge Distillation
+                LLM · RAG · AI Agent · Text2SQL ·
+                PII Detection · Knowledge Distillation
             </span>
 
         </div>
-
 
         <div class="skill-row">
 
@@ -362,7 +325,6 @@
 
         </div>
 
-
         <div class="skill-row">
 
             <strong>
@@ -370,7 +332,8 @@
             </strong>
 
             <span>
-                Python · FastAPI · PostgreSQL · pgvector · Redis · ChromaDB
+                Python · FastAPI · PostgreSQL · pgvector ·
+                Redis · ChromaDB
             </span>
 
         </div>
@@ -378,17 +341,14 @@
     </section>
 
 
-
     <!-- ========================================
          Education
     ========================================= -->
-
     <section>
 
         <h2>
             EDUCATION
         </h2>
-
 
         <div class="education">
 
@@ -404,13 +364,11 @@
 
             </div>
 
-
             <time>
                 2018.03 — 2023.02
             </time>
 
         </div>
-
 
         <div class="education">
 
@@ -421,11 +379,10 @@
                 </strong>
 
                 <span>
-                    추천 시스템 · 머신러닝 엔지니어링
+                    추천 시스템 (Recsys)
                 </span>
 
             </div>
-
 
             <time>
                 2022.09 — 2023.02
@@ -438,24 +395,24 @@
             CERTIFICATE
         </h2>
 
-
         <div class="education">
+            <div>
+                <strong>
+                    ADsP
+                </strong>
+                <span>
+                    데이터분석 준전문가 · 한국데이터산업진흥원
+                </span>
+            </div>
 
-            <strong>
-                ADsP
-            </strong>
-
-            <time>
+            <time datetime="2024-06">
                 2024.06
             </time>
-
         </div>
 
     </section>
 
-
 </div>
 
 </body>
-
 </html>
